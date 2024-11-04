@@ -195,7 +195,9 @@
 -- ```
 ---@field lsp_saga boolean?
 ---@field lsp_trouble boolean?
+---@field lualine CtpIntegrationLualine?
 ---@field markview boolean?
+---@field markdown boolean?
 ---@field mason boolean?
 -- You **NEED** to enable highlight in your `nvim-navic` config or it won't work:
 --
@@ -283,11 +285,47 @@
 -- Sets lir-git-status.nvim highlight groups
 ---@field git_status boolean
 
+---@alias CtpIntegrationLualine CtpFlavors<CtpIntegrationLualineOverride | CtpIntegrationLualineOverrideFn>
+---@alias CtpIntegrationLualineOverride CtpIntegrationLualineModes<CtpIntegrationLualineSectionOverrides>
+---@alias CtpIntegrationLualineOverrideFn fun(colors: CtpColors<string>): CtpIntegrationLualineOverride
+---@alias CtpIntegrationLualineMode "normal" | "insert" | "visual" | "replace" | "command" | "terminal" | "inactive" 
+---@class CtpIntegrationLualineModes<T>: { all: T, normal: T, insert: T, visual: T, replace: T, command: T, terminal: T, inactive: T } 
+---@alias CtpIntegrationLualineSectionOverrides CtpIntegrationLualineSections<CtpIntegrationLualineSectionOverride>
+---@alias CtpIntegrationLualineSection "a" | "b" | "c"
+---@class CtpIntegrationLualineSections<T>: { a: T, b: T, c: T }
+---@class CtpIntegrationLualineSectionOverride
+---Color string to use for both guifg and ctermfg
+---@field fg string?
+---Color string to use for both guibg and ctermbg
+---@field bg string?
+---`gui` argument to be used in vim `highlight!`, such as "italic,bold"
+---@field gui string?
+
 ---@class CtpIntegrationMini
 -- Whether to enable the integration.
 ---@field enabled boolean
 -- Sets the color of the scope line
 ---@field indentscope_color CtpColor?
+
+---@class CtpIntegrationNativeLsp
+-- Whether to enable the Native LSP integration.
+---@field enabled boolean
+-- Styles to apply to virtual text.
+---@field virtual_text CtpNativeLspStyles?
+-- Styles to apply to underlines.
+---@field underlines CtpNativeLspStyles?
+-- Inlay hints options.
+---@field inlay_hints CtpNativeLspInlayHints?
+
+---@class CtpIntegrationNativeLsp
+-- Whether to enable the Native LSP integration.
+---@field enabled boolean
+-- Styles to apply to virtual text.
+---@field virtual_text CtpNativeLspStyles?
+-- Styles to apply to underlines.
+---@field underlines CtpNativeLspStyles?
+-- Inlay hints options.
+---@field inlay_hints CtpNativeLspInlayHints?
 
 ---@class CtpIntegrationNavic
 -- Whether to enable the navic integration.
