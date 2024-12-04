@@ -1113,6 +1113,20 @@ cmp = true
 </tr>
 <!-- nvim-cmp -->
 
+<!-- nvim-copilot-vim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/github/copilot.vim">copilot.vim</a> </td>
+<td>
+
+```lua
+copilot_vim = false,
+```
+
+</td>
+</tr>
+<!-- nvim-copilot-vim -->
+
 <!-- nvim-dap -->
 </tr>
 <tr>
@@ -1452,6 +1466,21 @@ render_markdown = true
 </td>
 </tr>
 <!-- render-markdown.nvim -->
+
+<!-- snacks.nvim -->
+</tr>
+<tr>
+<td> <a href="https://github.com/folke/snacks.nvim">snacks.nvim</a> </td>
+<td>
+
+
+```lua
+snacks = false
+```
+
+</td>
+</tr>
+<!-- snacks.nvim -->
 
 <!-- symbols-outline.nvim -->
 </tr>
