@@ -941,7 +941,7 @@ lualine = {
 
 <details> <summary>Special</summary>
 
-To implement color overrides in the integrations.lualine spec
+To implement color overrides in the `integrations.lualine` spec:
 ```lua
 lualine = {
     -- lualine color overrides in the following hierarchy: Catppuccin Flavor -> Mode -> Lualine Section
@@ -952,7 +952,7 @@ lualine = {
         return {
             -- Specifying a normal-mode status line override for section a's background and b's foreground to use lavender like the main Catppuccin theme
             normal = { 
-                a = { bg = colors.lavender },
+                a = { bg = colors.lavender, gui = "italic" },
                 b = { fg = colors.lavender },
             }
         }
@@ -960,12 +960,12 @@ lualine = {
     -- A macchiato-specific override, which takes priority over 'all'. Also using the direct table syntax instead of function in case you do not rely on dynamic palette colors
     macchiato = { 
         normal = { 
-            a = { bg = colors.mauve },
+            a = { bg = "#abcdef" },
         }
     },
 }
 ```
-To setup lualine to find the catppuccin theme with default integration and any overrides
+To setup lualine to find the catppuccin theme with default integration and any overrides:
 ```lua
 -- Setup lualine 
 require('lualine').setup {
