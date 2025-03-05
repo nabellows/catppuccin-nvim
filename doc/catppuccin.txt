@@ -558,10 +558,7 @@ gitgraph.nvim>lua
 <
 
 gitsigns.nvim>lua
-    gitsigns = {
-      enabled = true,
-      transparent = true, -- Default: false
-    }
+    gitsigns = true
 <
 
 grug-far.nvim>lua
